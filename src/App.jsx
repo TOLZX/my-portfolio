@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { Typewriter } from "react-simple-typewriter";
 import emailjs from "@emailjs/browser";
 import Particles from "@tsparticles/react";
@@ -24,26 +23,30 @@ function App() {
     {
       title: "African Glam",
       description: "A modern fashion website with clean UI and smooth interactions.",
-      tech: "HTML, CSS, JavaScript",
+      tech: ["HTML", "CSS", "JavaScript"],
       link: "#",
+      color: "#ff6b9d",
     },
     {
       title: "Anime Website",
       description: "Anime discovery platform with cards, sections and animations.",
-      tech: "React, CSS",
+      tech: ["React", "CSS"],
       link: "#",
+      color: "#a78bfa",
     },
     {
       title: "Netflix Clone",
       description: "Netflix-style UI with authentication and dashboard.",
-      tech: "Node.js, Express",
+      tech: ["Node.js", "Express"],
       link: "#",
+      color: "#f87171",
     },
     {
       title: "E-commerce Store",
       description: "Full-stack online store with product listings and cart.",
-      tech: "React, Node.js",
+      tech: ["React", "Node.js"],
       link: "#",
+      color: "#00f0ff",
     },
   ];
 
@@ -303,19 +306,19 @@ function App() {
           viewport={{ once: false, amount: 0.3 }}
         >
           <h2>Projects</h2>
+          <p className="section-subtitle">A selection of things I've built</p>
 
-          <Swiper
-            modules={[Navigation, Autoplay]}
-            navigation
-            autoplay={{ delay: 3500 }}
-            spaceBetween={30}
-            slidesPerView={1}
-            loop={true}
-            breakpoints={{
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-          >
+           <Swiper
+             modules={[Autoplay]}
+             autoplay={{ delay: 3500 }}
+             spaceBetween={30}
+             slidesPerView={1}
+             loop={true}
+             breakpoints={{
+               768: { slidesPerView: 2 },
+               1024: { slidesPerView: 3 },
+             }}
+           >
             {projects.map((project, index) => (
               <SwiperSlide key={index}>
                 <Tilt
@@ -324,12 +327,19 @@ function App() {
                   scale={1.05}
                   transitionSpeed={1500}
                 >
-                  <div className="project-card">
-                    <h3>{project.title}</h3>
+                  <div className="project-card" style={{ "--card-color": project.color }}>
+                    <div className="project-card-top">
+                      <span className="project-number">0{index + 1}</span>
+                      <h3>{project.title}</h3>
+                    </div>
                     <p>{project.description}</p>
-                    <span>{project.tech}</span>
-                    <a href={project.link} className="btn small">
-                      View Project
+                    <div className="tech-tags">
+                      {project.tech.map((t, i) => (
+                        <span key={i} className="tech-tag">{t}</span>
+                      ))}
+                    </div>
+                    <a href={project.link} className="btn small project-btn">
+                      View Project <span className="btn-arrow">→</span>
                     </a>
                   </div>
                 </Tilt>
@@ -467,7 +477,7 @@ function App() {
     </motion.section>
     
     <footer className="footer">
-        <p>&copy; 2024 Toluwa. All rights reserved.</p>
+        <p>&copy; 2026 Toluwa. All rights reserved.</p>
       <div className="social-links">
         <a href="https://twitter.com/itzToluwa" target="_blank" rel="noopener noreferrer">
           Twitter
