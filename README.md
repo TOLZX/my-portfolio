@@ -11,7 +11,6 @@
 - Netflix Clone (Node + Express)
 
 ## 💻 Tech Stack
-HTML | CSS | JavaScript | React | Node.js | Express
-
+HTML | CSS | JavaScript | React | Node.js | Express | MongoDB | PHP
 ## 📫 Contact
 Email: toluwaowolaja@email.com
