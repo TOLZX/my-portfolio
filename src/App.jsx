@@ -138,6 +138,7 @@ function App() {
             {/* <a href="#home" onClick={() => setMenuOpen(false)}>home</a> */}
             <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
             <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+            <a href="#services" onClick={() => setMenuOpen(false)}>Services</a>
             <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           </div>
 
@@ -196,15 +197,24 @@ function App() {
               I build modern, responsive and animated web experiences.
             </motion.p>
           </motion.div>
-          <motion.a
-  href="https://wa.me/2349135452576?text=Hello%20I%20would%20like%20to%20hire%20you"
-  download
-  whileHover={{ scale: 1.1 }}
-  whileTap={{ scale: 0.95 }}
-  className="cv-btn"
->
-  Hire me
-</motion.a>
+          <div className="hero-actions">
+            <motion.a
+              href="https://wa.me/2349135452576?text=Hello%20I%20would%20like%20to%20hire%20you"
+              whileHover={{ scale: 1.07 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn"
+            >
+              Hire Me
+            </motion.a>
+            <motion.a
+              href="#projects"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="cv-btn"
+            >
+              See My Work
+            </motion.a>
+          </div>
 
         </section>
         <motion.section
@@ -283,19 +293,22 @@ function App() {
           <p>Performance Focused</p>
         </div>
       </div>
-      <h5>I help startups, brands, and entrepreneurs build high-performance web applications from concept to deployment using modern frontend and scalable backend technologies.</h5>
-      <a href="#contact" className="about-btn">
-        Let’s Build Something Powerful
-      </a>
-      <motion.a
-  href="https://wa.me/2349135452576?text=Hello%20I%20would%20like%20to%20hire%20you"
-  download
-  whileHover={{ scale: 1.1 }}
-  whileTap={{ scale: 0.95 }}
-  className="cv-btn"
->
-  Hire me
-</motion.a>
+      <p className="about-tagline">
+        I help startups, brands, and entrepreneurs build high-performance web
+        applications — from concept to deployment — using modern frontend and
+        scalable backend technologies.
+      </p>
+      <div className="about-actions">
+        <a href="#contact" className="about-btn">Let’s Build Something</a>
+        <motion.a
+          href="https://wa.me/2349135452576?text=Hello%20I%20would%20like%20to%20hire%20you"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="cv-btn"
+        >
+          Hire Me
+        </motion.a>
+      </div>
     </motion.section>
         <motion.section
           className="section"
@@ -375,6 +388,7 @@ function App() {
         </div>
 
         <div className="service-card featured">
+          <span className="service-badge">Most Popular</span>
           <h3>🔥 Full-Stack Web App</h3>
           <p>Frontend + Backend with database integration.</p>
           <ul>
